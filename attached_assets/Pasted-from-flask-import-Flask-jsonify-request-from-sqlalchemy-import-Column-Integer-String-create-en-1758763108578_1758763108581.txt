@@ -1,0 +1,59 @@
+from flask import Flask, jsonify, request
+from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker
+
+Base = declarative_base()
+
+class Item(Base):
+    __tablename__ = 'items'
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    description = Column(String)
+
+def get_engine(db_url):
+    return create_engine(db_url, connect_args={"check_same_thread": False})
+
+def create_app(engine=None, db_url=None):
+    app = Flask(__name__)
+    if engine is None:
+        if db_url is None:
+            db_url = 'sqlite:///app.db'
+        engine = get_engine(db_url)
+
+    Base.metadata.create_all(engine)
+    app.session_factory = sessionmaker(bind=engine)
+
+    @app.route('/items', methods=['POST'])
+    def create_item():
+        data = request.get_json() or {}
+        if 'name' not in data:
+            return jsonify({'error': 'name is required'}), 400
+        session = app.session_factory()
+        item = Item(name=data['name'], description=data.get('description'))
+        session.add(item)
+        session.commit()
+        response = {'id': item.id, 'name': item.name, 'description': item.description}
+        session.close()
+        return jsonify(response), 201
+
+    @app.route('/items/<int:item_id>', methods=['GET'])
+    def get_item(item_id):
+        session = app.session_factory()
+        item = session.get(Item, item_id)
+        session.close()
+        if not item:
+            return jsonify({'error': 'not found'}), 404
+        return jsonify({'id': item.id, 'name': item.name, 'description': item.description}), 200
+
+    @app.route('/items', methods=['GET'])
+    def list_items():
+        session = app.session_factory()
+        items = session.query(Item).all()
+        session.close()
+        return jsonify([{'id': i.id, 'name': i.name, 'description': i.description} for i in items])
+
+    return app
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(host="0.0.0.0", port=8000, debug=True)
