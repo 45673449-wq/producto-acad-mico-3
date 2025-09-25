@@ -1,19 +1,27 @@
-# Proyecto Académico TDD con Python y Flask
+# 📘 Proyecto Académico — Desarrollo Guiado por Pruebas (TDD) con Python, Flask y CI/CD
 
-Este repositorio contiene el desarrollo de un producto académico basado en **Desarrollo Guiado por Pruebas (TDD)**.  
+**Curso:** Construcción de Software  
+**Autor:** Eneas Rivas Pinedo  
+**Año:** 2025
 
-## 🚀 Objetivos
-- Aplicar el ciclo **Red → Green → Refactor**.
-- Implementar un **API REST** con Flask y SQLAlchemy.
-- Utilizar **pytest** para pruebas unitarias.
-- Configurar **GitHub Actions** para integración continua.
+---
 
-## 📂 Estructura del proyecto
-.
-├── app.py
-├── requirements.txt
-├── tests/
-│ ├── test_items.py
-│ └── test_katas.py
-├── pytest.ini
-└── .github/workflows/ci.yml
+## 1. Introducción
+
+Este proyecto aplica **Test Driven Development (TDD)** para construir una API REST que gestiona "items".  
+Se implementó en **Python (Flask)** con persistencia mediante **SQLAlchemy (SQLite)**; las pruebas se ejecutan con **pytest** y la integración continua está configurada con **GitHub Actions**.
+
+---
+
+## 2. Objetivos
+
+- Aplicar el ciclo **Red → Green → Refactor**.  
+- Implementar operaciones CRUD con Flask y SQLAlchemy.  
+- Crear pruebas unitarias con `pytest`.  
+- Resolver una kata (Fibonacci) con TDD.  
+- Configurar integración continua (GitHub Actions).
+
+---
+
+## 3. Estructura del repositorio
+
