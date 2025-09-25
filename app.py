@@ -52,6 +52,38 @@ def create_app(engine=None, db_url=None):
         session.close()
         return jsonify([{'id': i.id, 'name': i.name, 'description': i.description} for i in items])
 
+    @app.route('/items/<int:item_id>', methods=['PUT'])
+    def update_item(item_id):
+        data = request.get_json() or {}
+        session = app.session_factory()
+        item = session.get(Item, item_id)
+        if not item:
+            session.close()
+            return jsonify({'error': 'not found'}), 404
+        
+        if 'name' in data:
+            item.name = data['name']
+        if 'description' in data:
+            item.description = data['description']
+        
+        session.commit()
+        response = {'id': item.id, 'name': item.name, 'description': item.description}
+        session.close()
+        return jsonify(response), 200
+
+    @app.route('/items/<int:item_id>', methods=['DELETE'])
+    def delete_item(item_id):
+        session = app.session_factory()
+        item = session.get(Item, item_id)
+        if not item:
+            session.close()
+            return jsonify({'error': 'not found'}), 404
+        
+        session.delete(item)
+        session.commit()
+        session.close()
+        return '', 204
+
     return app
 
 if __name__ == "__main__":
