@@ -17,16 +17,3 @@ Este repositorio contiene el desarrollo de un producto académico basado en **De
 │ └── test_katas.py
 ├── pytest.ini
 └── .github/workflows/ci.yml
-
-
----
-
-## 4. Cómo ejecutar (Replit / local)
-
-### Replit (recomendado si no tienes Python local)
-1. Crea un nuevo Repl en https://replit.com con **Python**.  
-2. Copia `app.py`, `requirements.txt` y la carpeta `tests/`.  
-3. En Shell:  
-   ```bash
-   pip install -r requirements.txt
-   python app.py
