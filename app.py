@@ -23,6 +23,18 @@ def create_app(engine=None, db_url=None):
     Base.metadata.create_all(engine)
     app.session_factory = sessionmaker(bind=engine)
 
+    @app.route('/')
+    def index():
+        return (
+            "<h3>Bienvenido a la API de Items</h3>"
+            "<p>Usa las rutas: "
+            "<code>POST /items</code>, "
+            "<code>GET /items</code>, "
+            "<code>GET /items/&lt;id&gt;</code>, "
+            "<code>PUT /items/&lt;id&gt;</code>, "
+            "<code>DELETE /items/&lt;id&gt;</code></p>"
+        )
+
     @app.route('/items', methods=['POST'])
     def create_item():
         data = request.get_json() or {}
