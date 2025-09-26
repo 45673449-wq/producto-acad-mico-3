@@ -1,27 +1,34 @@
-# 📘 Proyecto Académico — Desarrollo Guiado por Pruebas (TDD) con Python, Flask y CI/CD
+# 📘 Producto Académico 03 – Pruebas Unitarias y TDD
 
-**Curso:** Construcción de Software  
-**Autor:** Eneas Rivas Pinedo  
-**Año:** 2025
+[![CI](https://github.com/45673449-wq/producto-acad-mico-3/actions/workflows/ci.yml/badge.svg)](https://github.com/45673449-wq/producto-acad-mico-3/actions)
 
 ---
 
-## 1. Introducción
+## 📌 Descripción
 
-Este proyecto aplica **Test Driven Development (TDD)** para construir una API REST que gestiona "items".  
-Se implementó en **Python (Flask)** con persistencia mediante **SQLAlchemy (SQLite)**; las pruebas se ejecutan con **pytest** y la integración continua está configurada con **GitHub Actions**.
+Este proyecto académico corresponde al curso **Construcción de Software** y tiene como objetivo aplicar el enfoque **Desarrollo Guiado por Pruebas (TDD)**.  
 
----
-
-## 2. Objetivos
-
-- Aplicar el ciclo **Red → Green → Refactor**.  
-- Implementar operaciones CRUD con Flask y SQLAlchemy.  
-- Crear pruebas unitarias con `pytest`.  
-- Resolver una kata (Fibonacci) con TDD.  
-- Configurar integración continua (GitHub Actions).
+En el desarrollo se implementaron:  
+✅ **Pruebas unitarias** automatizadas con Pytest  
+✅ **Katas TDD** como *FizzBuzz* y *Fibonacci*  
+✅ **ORM con SQLAlchemy** para gestionar datos en SQLite  
+✅ **Integración Continua (CI/CD)** con GitHub Actions  
 
 ---
 
-## 3. Estructura del repositorio
+## 🎯 Objetivos del proyecto
 
+- 🧪 Diseñar e implementar **pruebas unitarias** con alta cobertura.  
+- 🔄 Aplicar el ciclo **TDD (Red → Green → Refactor)**.  
+- 📝 Resolver problemas mediante **Katas TDD**.  
+- 🗄️ Usar **SQLAlchemy (ORM)** para la gestión de datos.  
+- ⚡ Mantener un flujo ágil con **CI/CD** en GitHub Actions.  
+
+---
+
+## 🚀 Instalación y ejecución
+
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/45673449-wq/producto-acad-mico-3.git
+cd producto-acad-mico-3
