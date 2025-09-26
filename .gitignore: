@@ -1,0 +1,12 @@
+# Base de datos sqlite
+*.db
+app.db
+test.db
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE / config
+.vscode/
+.env
