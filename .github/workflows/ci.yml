@@ -9,4 +9,6 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install pytest
-      - run: pytest --maxfail=1 --disable-warnings -q --import-mode=importlib
+      - run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+          pytest --maxfail=1 --disable-warnings -q
