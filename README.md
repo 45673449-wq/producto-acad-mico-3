@@ -1,4 +1,27 @@
 # 📘 Producto Académico 03 – Pruebas Unitarias y TDD
+🛠️ Tecnologías utilizadas
+
+🐍 Python 3.11
+
+🌐 Flask
+
+🗄️ SQLAlchemy (ORM con SQLite)
+
+🧪 Pytest / Pytest-Cov
+
+⚙️ GitHub Actions (CI/CD)
+
+👨‍💻 Autores
+
+👤 Eneas Rivas Pinedo
+
+👤 Merily Eliana Vargas Cabrera
+
+📄 Licencia
+
+📚 Uso académico – Universidad Continental
+👨‍🏫 Curso: Construcción de Software
+👨‍🏫 Docente: Waldyr Fredy Cerron Valverde
 
 [![CI](https://github.com/45673449-wq/producto-acad-mico-3/actions/workflows/ci.yml/badge.svg)](https://github.com/45673449-wq/producto-acad-mico-3/actions)
 
@@ -6,7 +29,7 @@
 
 ## 📌 Descripción
 
-Este proyecto académico corresponde al curso **Construcción de Software** y tiene como objetivo aplicar el enfoque **Desarrollo Guiado por Pruebas (TDD)**.  
+Este proyecto académico corresponde al curso **Construcción de Software** de la **Universidad Continental**, y tiene como objetivo aplicar el enfoque **Desarrollo Guiado por Pruebas (TDD)**.  
 
 En el desarrollo se implementaron:  
 ✅ **Pruebas unitarias** automatizadas con Pytest  
